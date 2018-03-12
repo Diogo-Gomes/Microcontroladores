@@ -1,0 +1,22 @@
+1-O que são sistemas embarcados?
+  São sistemas computacionais responsáveis por realizar uma função específica 
+  em que, geralmente, é repetida inúmeras vezes.
+
+2-O que são sistemas microprocesssados?
+  Sistemas fechados e dedicados para um proposito definido.
+
+3-Apresente aplicações de sistemas embarcados: (a) para a indústria automotiva; (b) para eletrodomésticos; (c) para automação industrial.
+  (a) Central multimídia, Computadores de Bordo;
+  (b) Televisão, Geladeira, Microondas;
+  (c) Sistemas controladores de pressão/temperatura, máquinas que realizam uma funão específica (robos) 
+
+4-Cite arquiteturas possíveis e as diferenças entre elas.
+   Harvard e von Neumann. 
+   A Harvard permite leitura simutanea dos dados
+   enquanto Von Neumann utiliza o mesmo espaço de memória para ambos.
+
+5-Por que usamos o MSP430 na disciplina, ao invés de outro microcontrolador?
+  Baixíssimo consumo elétrico (230 uA a 1MHz/2.2 V), sendo ideal para dispositivos alimentados por bateria. 
+  Arquitetura RISC de 16 bits podendo trabalhar a uma frequência interna de até 16 MHz.
+  Registradores flexíveis ao uso.
+  Baixo custo.
