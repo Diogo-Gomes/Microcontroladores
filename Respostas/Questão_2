@@ -20,7 +20,10 @@ int main(void)
 	return 0;
 }
 Para este código, responda: (a) A variável i é armazenada na memória RAM ou ROM? Por quê? (b) O programa compilado a partir deste código é armazenado na memória RAM ou ROM? Por quê?
-  (a) A variável i é armazenada na memória RAM,
+  (a) Como a variavel i sofre alteração do seu valor durante a execução do programa e não há uma necessidade de guardar seu valor após a execução do programa ela tem as caracteristicas que levam a defini-la como 
+  parte da memória RAM.
+  (b) Após a execução do programa ele é armazenado na memória ROM, porque após a interrupção do fornecimento de energia
+  o valor obtido precisa ser mantido.
   
 4 - Quais são as diferenças, vantagens e desvantagens das arquiteturas Harvard e Von Neumann?
   Havard: Aquitetura mais complexa, mais rápido (pois permite acesso simultâneo as memórias), geralmente RISC, permite pipeline.
@@ -30,4 +33,17 @@ Para este código, responda: (a) A variável i é armazenada na memória RAM ou 
 
 5 - Considere a variável inteira i, armazenando o valor 0x8051ABCD. Se i é armazenada na memória a partir do endereço 0x0200, como ficam este byte e os seguintes, considerando que a memória é: (a) Little-endian; (b) Big-endian.
 
+Little:                                                                    
+    0xCD - 0x0200
+    0xAB - 0x0201
+    0x51 - 0x0202
+    0x80 - 0x0203
+
+Big:    
+    0x80 - 0x0200
+    0x51 - 0x0201
+    0xAB - 0x0202
+    0xCD - 0x0203
+
 6 - Sabendo que o processador do MSP430 tem registradores de 16 bits, como ele soma duas variáveis de 32 bits?
+   Usando registradores para auxiliar a soma.
