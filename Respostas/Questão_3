@@ -33,9 +33,49 @@ a |= (BIT0 + BIT1 + BIT2 + BIT3);
 
 2- Considerando a placa Launchpad do MSP430, escreva o código em C para piscar os dois LEDs ininterruptamente.
 
+#include <msp430.h>  
+ 
+int main(void) {
+    WDTCTL = WDTPW | WDTHOLD;      // Parar watchdog timer
+ 
+    P1DIR = 0x41;              // Define porta como entrada ou saída
+                               // 0 para entrada, 1 para saída
+ 
+    P1OUT = 0x00;              // Inicia em LOW
+ 
+    while(1){
+      P1OUT = 0x41;            //Acende os LEDs
+    }
+}
 
 3- Considerando a placa Launchpad do MSP430, escreva o código em C para piscar duas vezes os dois LEDs sempre que o usuário pressionar o botão.
 
+#include <msp430g2553.h>
+#define LED1 BIT0
+#define LED2 BIT6
+#define LEDS (LED1|LED2)
+#define BTN  BIT3
+
+int main(void)
+{
+	WDTCTL = WDTPW | WDTHOLD;
+	P1OUT |= LEDS;
+	P1DIR |= LEDS;
+	P1DIR &= ~BTN;
+	P1REN |= BTN;
+	P1OUT |= BTN;
+	while(1)
+	{
+		if((P1IN&BTN)==0)
+			P1OUT = LEDS+BTN;
+      deley()
+      P1OUT &= ~LEDS;
+      P1OUT = LEDS+BTN;
+		else
+			P1OUT &= ~LEDS;
+	}
+	return 0;
+}
 
 4- Considerando a placa Launchpad do MSP430, faça uma função em C que pisca os dois LEDs uma vez.
 
